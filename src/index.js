@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Docs from './docs/Docs'
+import './index.css'
+import '../node_modules/highlight.js/styles/atom-one-dark.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Docs />, document.getElementById('root'))
