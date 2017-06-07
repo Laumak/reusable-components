@@ -1,0 +1,24 @@
+import React from "react"
+import PropTypes from "prop-types"
+
+const propTypes = {
+  /** HTML ID for associated input */
+  htmlFor: PropTypes.string.isRequired,
+
+  /** Label text */
+  label: PropTypes.string.isRequired,
+
+  /** Display asterisk after label if true */
+  required: PropTypes.bool
+}
+
+/** Label with required field display, htmlFor, and block styling */
+const Label = ({htmlFor, label, required}) => (
+  <label style={{display: "block"}} htmlFor={htmlFor}>
+    {label} { required && <span style={{color: "red"}}> *</span> }
+  </label>
+)
+
+Label.propTypes = propTypes
+
+export default Label
