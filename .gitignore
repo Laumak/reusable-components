@@ -27,7 +27,7 @@ yarn-error.log*
 /docs
 
 # Generated component data
-/config/conmponentData.js
+config/componentData.js
 
 # VSCode launch configuration
 launch.json
