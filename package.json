@@ -25,13 +25,15 @@
     "start:docs": "node scripts/start.js",
     "gen:docs": "node scripts/generateComponentData.js",
     "gen:docs-watch": "npm run gen:docs -- --watch",
+    "prebuild:docs": "rimraf build",
     "build:docs": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
     "prebuild:lib": "rimraf lib",
     "build:lib": "npm-run-all --parallel build:commonjs build:css",
     "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
-    "prepublish": "npm run build:lib"
+    "prepublish": "npm run build:lib",
+    "publish:docs": "npm run build:docs && surge ./build --domain mits-comps.surge.sh"
   },
   "dependencies": {
     "bulma": "^0.4.2",
@@ -83,6 +85,7 @@
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.5",
     "style-loader": "0.17.0",
+    "surge": "^0.19.0",
     "sw-precache-webpack-plugin": "0.9.1",
     "url-loader": "0.5.8",
     "webpack": "2.6.1",
