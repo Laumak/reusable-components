@@ -1,7 +1,22 @@
 {
-  "name": "reusable-react-components",
+  "name": "mits-react-components",
   "version": "0.1.0",
-  "private": false,
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "author": {
+    "name": "Lauri Mäkinen",
+    "email": "lauri@mits.fi",
+    "url": "https://mits.fi"
+  },
+  "files": [ "lib" ],
+  "keywords": [
+    "components",
+    "react",
+    "react-component",
+    "toolkit"
+  ],
   "scripts": {
     "prestart": "npm run gen:docs",
     "start": "npm-run-all --parallel gen:docs-watch start:docs",
@@ -13,11 +28,11 @@
     "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore spec.js",
     "build:css": "cpx \"./src/components/**/*.css\" ./lib",
     "prebuild:lib": "rimraf lib",
-    "build:lib": "npm run build:commonjs && npm run build:css"
+    "build:lib": "npm run build:commonjs && npm run build:css",
+    "prepublish": "npm run build:lib"
   },
   "dependencies": {
     "bulma": "^0.4.2",
-    "highlight.js": "^9.12.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -48,6 +63,7 @@
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.11.1",
     "fs-extra": "3.0.1",
+    "highlight.js": "^9.12.0",
     "html-webpack-plugin": "2.28.0",
     "jest": "20.0.3",
     "node-sass": "^4.5.3",
