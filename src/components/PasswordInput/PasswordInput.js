@@ -62,7 +62,7 @@ class PasswordInput extends React.Component {
       htmlId, value, label, error,
       onChange, placeholder, maxLength,
       showVisibilityToggle, quality,
-      ...rest,
+      ...rest
     } = this.props
     const { showPassword } = this.state
 

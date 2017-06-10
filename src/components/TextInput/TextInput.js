@@ -7,7 +7,7 @@ const TextInput = ({
   htmlId, name, label, type = "text",
   required = false, onChange, placeholder,
   value, error, children,
-  ...rest,
+  ...rest
 }) => {
   return (
     <div style={{marginBottom: 16}}>
@@ -60,7 +60,7 @@ TextInput.propTypes = {
   error: PropTypes.string,
 
   /** Child component to display next to the input */
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default TextInput

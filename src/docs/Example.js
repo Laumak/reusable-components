@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-import CodeExample from './CodeExample'
+import CodeExample from "./CodeExample"
 
 class Example extends React.Component {
   static propTypes = {

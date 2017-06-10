@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react"
 
-import PasswordInput from 'mits-react-components/lib/PasswordInput'
+import PasswordInput from "mits-react-components/lib/PasswordInput"
 
 /** All features enabled */
 class ExampleAllFeatures extends React.Component {
   state = {
-    password: '',
+    password: "",
   }
 
   getQuality() {

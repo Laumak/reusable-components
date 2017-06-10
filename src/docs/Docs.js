@@ -6,7 +6,7 @@ import componentData from "../../config/componentData"
 
 class Docs extends React.Component {
   state = {
-    route: window.location.hash.substr(1)
+    route: window.location.hash.substr(1),
   }
 
   componentDidMount() {

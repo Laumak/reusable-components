@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
 const Navigation = ({components}) => {
   return (
@@ -21,7 +21,7 @@ const Navigation = ({components}) => {
 }
 
 Navigation.propTypes = {
-  components: PropTypes.array.isRequired
+  components: PropTypes.array.isRequired,
 }
 
 export default Navigation

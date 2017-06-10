@@ -9,12 +9,15 @@ const propTypes = {
   label: PropTypes.string.isRequired,
 
   /** Display asterisk after label if true */
-  required: PropTypes.bool
+  required: PropTypes.bool,
 }
 
 /** Label with required field display, htmlFor, and block styling */
 const Label = ({htmlFor, label, required}) => (
-  <label style={{display: "block"}} htmlFor={htmlFor}>
+  <label
+    style={{display: "block"}}
+    htmlFor={htmlFor}
+  >
     {label} { required && <span style={{color: "red"}}> *</span> }
   </label>
 )

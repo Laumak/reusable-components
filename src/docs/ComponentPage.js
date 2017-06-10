@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-import Example from './Example'
-import Props from './Props'
+import Example from "./Example"
+import Props from "./Props"
 
 const ComponentPage = ({ component }) => {
   const { name, description, props, examples } = component
@@ -32,7 +32,7 @@ const ComponentPage = ({ component }) => {
 }
 
 ComponentPage.propTypes = {
-  component: PropTypes.object.isRequired
+  component: PropTypes.object.isRequired,
 }
 
 export default ComponentPage
