@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const Props = ({props}) => {
+const Props = ({ props }) => {
   return (
-    <table className="props">
+    <table className="props table is-striped is-narrow">
       <thead>
         <tr>
           <th>Name</th>
@@ -24,7 +24,7 @@ const Props = ({props}) => {
               <td>{props[key].defaultValue && props[key].defaultValue.value}</td>
               <td>{props[key].required && "X"}</td>
             </tr>
-          );
+          )
         })
       }
       </tbody>
@@ -34,6 +34,6 @@ const Props = ({props}) => {
 
 Props.propTypes = {
   props: PropTypes.object.isRequired
-};
+}
 
-export default Props;
+export default Props
