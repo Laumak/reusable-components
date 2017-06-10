@@ -62,7 +62,7 @@ class PasswordInput extends React.Component {
       htmlId, value, label, error,
       onChange, placeholder, maxLength,
       showVisibilityToggle, quality,
-      ...props,
+      ...rest,
     } = this.props
     const { showPassword } = this.state
 
@@ -77,7 +77,7 @@ class PasswordInput extends React.Component {
         maxLength={maxLength}
         error={error}
         required
-        {...props}
+        {...rest}
       >
         {
           showVisibilityToggle &&

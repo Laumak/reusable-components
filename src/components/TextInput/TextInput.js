@@ -7,7 +7,7 @@ const TextInput = ({
   htmlId, name, label, type = "text",
   required = false, onChange, placeholder,
   value, error, children,
-  ...props,
+  ...rest,
 }) => {
   return (
     <div style={{marginBottom: 16}}>
@@ -21,7 +21,7 @@ const TextInput = ({
         value={value}
         onChange={onChange}
         style={error && {border: "solid 1px red"}}
-        {...props}
+        {...rest}
       />
 
       {children}
