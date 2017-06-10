@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PasswordInput from 'ps-react/PasswordInput'
+import PasswordInput from 'mits-react-components/lib/PasswordInput'
 
 /** All features enabled */
 class ExampleAllFeatures extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react"
-import EyeIcon from "ps-react/EyeIcon"
+import EyeIcon from "mits-react-components/lib/EyeIcon"
 
 const EyeIconExample = () => (
   <EyeIcon />

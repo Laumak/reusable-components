@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import TextInput from "ps-react/TextInput"
+import TextInput from "mits-react-components/lib/TextInput"
 
 /** Optional TextBox */
 class ExampleOptional extends Component {

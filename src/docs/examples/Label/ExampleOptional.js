@@ -1,5 +1,5 @@
 import React from "react"
-import Label from "ps-react/Label"
+import Label from "mits-react-components/lib/Label"
 
 /** Optional label */
 const ExampleOptional = () => (
