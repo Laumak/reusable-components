@@ -7,6 +7,7 @@ const Navigation = ({components}) => {
       <p className="menu-label">
         Components
       </p>
+
       <ul className="menu-list">
         {
           components.map(name =>

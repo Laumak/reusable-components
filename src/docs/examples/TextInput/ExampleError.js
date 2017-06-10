@@ -11,7 +11,7 @@ const ExampleError = () => {
       onChange={() => {}}
       required
       error="First name is required."
-      />
+    />
   )
 }
 

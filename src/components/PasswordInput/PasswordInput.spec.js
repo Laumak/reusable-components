@@ -1,7 +1,8 @@
 import React from "react"
 import renderer from "react-test-renderer"
+import { shallow } from "enzyme"
+
 import PasswordInput from "./PasswordInput"
-import {shallow} from "enzyme"
 
 test("toggles input type when show/hide password clicked", () => {
   const wrapper = shallow(
@@ -38,30 +39,30 @@ test("hides password quality by default", () => {
   expect(tree).toMatchSnapshot()
 })
 
-test("shows password quality when enabled and a password is entered", () => {
-  const tree = renderer.create(
+test("shows password quality when enabled and a password is entered", () => {
+  const tree = renderer.create(
     <PasswordInput
       htmlId="test"
       name="test"
-      onChange={() => {}}
+      onChange={() => {}}
       showQuality
       value="Uisi38#8iad"
     />
   ).toJSON()
 
-  expect(tree).toMatchSnapshot()
+  expect(tree).toMatchSnapshot()
 })
 
-test("hides password quality when enabled but no password is entered", () => {
-  const tree = renderer.create(
+test("hides password quality when enabled but no password is entered", () => {
+  const tree = renderer.create(
     <PasswordInput
       htmlId="test"
       name="test"
-      onChange={() => {}}
+      onChange={() => {}}
       showQuality
       value=""
     />
   ).toJSON()
 
-  expect(tree).toMatchSnapshot()
+  expect(tree).toMatchSnapshot()
 })

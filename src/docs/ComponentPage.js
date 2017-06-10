@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Example from "./Example"
 import Props from "./Props"
+import Example from "./Example"
 
 const ComponentPage = ({ component }) => {
   const { name, description, props, examples } = component
