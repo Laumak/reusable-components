@@ -48,7 +48,6 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.0.0",
     "babel-runtime": "6.23.0",
     "case-sensitive-paths-webpack-plugin": "1.1.4",
@@ -60,11 +59,9 @@
     "dotenv": "4.0.0",
     "enzyme": "^2.8.2",
     "eslint": "3.19.0",
-    "eslint-config-react-app": "^1.0.4",
     "eslint-loader": "1.7.1",
     "eslint-plugin-flowtype": "2.33.0",
     "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "7.0.1",
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.11.1",
@@ -117,8 +114,5 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
