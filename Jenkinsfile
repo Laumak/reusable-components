@@ -17,7 +17,7 @@ node {
     stage('Deploy') {
         echo '-- Deploying the docs to Surge --'
 
-        sh 'surge ./build --domain mits-comps.surge.sh'
+        sh 'node_modules/surge/lib/cli.js ./build --domain mits-comps.surge.sh'
     }
 
     stage('Notify') {
