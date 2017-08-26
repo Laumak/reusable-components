@@ -1,6 +1,6 @@
 {
   "name": "mits-react-components",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "./lib/index.js",
   "engines": {
     "node": ">=4.0.0"
@@ -36,7 +36,6 @@
     "publish:docs": "npm run build:docs && surge ./build --domain mits-comps.surge.sh"
   },
   "dependencies": {
-    "bulma": "^0.4.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
