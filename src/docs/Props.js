@@ -1,16 +1,33 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
+
+const Table = styled.table`
+  border-collapse: collapse;
+  border-spacing: 0;
+`
+
+const TH = styled.th`
+  border: 1px solid #dbdbdb;
+  padding: 0.5em 0.75em;
+`
+
+const TD = styled.td`
+  font-family: 'Fira Sans', sans-serif;
+  border: 1px solid #dbdbdb;
+  padding: 0.5em 0.75em;
+`
 
 const Props = ({ props }) => {
   return (
-    <table className="props table is-striped is-narrow">
+    <Table style={{ marginBottom: 0 }}>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Required</th>
+          <TH>Name</TH>
+          <TH>Description</TH>
+          <TH>Type</TH>
+          <TH>Default</TH>
+          <TH>Required</TH>
         </tr>
       </thead>
 
@@ -18,16 +35,16 @@ const Props = ({ props }) => {
       {
         Object.keys(props).map(key =>
           <tr key={key}>
-            <td>{key}</td>
-            <td>{props[key].description}</td>
-            <td>{props[key].type.name}</td>
-            <td>{props[key].defaultValue && props[key].defaultValue.value}</td>
-            <td>{props[key].required && "X"}</td>
+            <TD>{key}</TD>
+            <TD>{props[key].description}</TD>
+            <TD>{props[key].type.name}</TD>
+            <TD>{props[key].defaultValue && props[key].defaultValue.value}</TD>
+            <TD style={{ textAlign: "center" }}>{props[key].required && "X"}</TD>
           </tr>
         )
       }
       </tbody>
-    </table>
+    </Table>
   )
 }
 

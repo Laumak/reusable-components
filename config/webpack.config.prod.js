@@ -30,10 +30,8 @@ if (env.stringified["process.env"].NODE_ENV !== "\"production\"") {
 
 // Note: defined here because it will be used more than once.
 const cssFilename  = "static/css/libs.[contenthash:8].css";
-const sassFilename = "static/css/app.[contenthash:8].css";
 
 const extractCSS  = new ExtractTextPlugin(cssFilename);
-const extractSASS = new ExtractTextPlugin(sassFilename);
 
 // ExtractTextPlugin expects the build output to be flat.
 // (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
@@ -42,11 +40,6 @@ const extractSASS = new ExtractTextPlugin(sassFilename);
 const extractTextPluginOptions = shouldUseRelativeAssetPaths
   ? // Making sure that the publicPath goes back to to build folder.
     { publicPath: Array(cssFilename.split("/").length).join("../") }
-  : {};
-
-const extractSassTextPluginOptions = shouldUseRelativeAssetPaths
-  ? // Making sure that the publicPath goes back to to build folder.
-    { publicPath: Array(sassFilename.split("/").length).join("../") }
   : {};
 
 // This is the production configuration.
@@ -130,7 +123,6 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
-          /\.sass$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -210,45 +202,6 @@ module.exports = {
         ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
-      {
-        test: /\.sass$/,
-        loader: extractSASS.extract(
-          Object.assign(
-            {
-              use: [
-                {
-                  loader: require.resolve("css-loader"),
-                  options: {
-                    importLoaders: 1,
-                    minimize: true,
-                    sourceMap: true,
-                  },
-                }, {
-                  loader: require.resolve("postcss-loader"),
-                  options: {
-                    ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-                    plugins: () => [
-                      require("postcss-flexbugs-fixes"),
-                      autoprefixer({
-                        browsers: [
-                          ">1%",
-                          "last 4 versions",
-                          "Firefox ESR",
-                          "not ie < 9", // React doesn't support IE8 anyway
-                        ],
-                        flexbox: "no-2009",
-                      }),
-                    ],
-                  },
-                },
-                require.resolve("sass-loader"),
-              ],
-            },
-            extractSassTextPluginOptions
-          )
-        ),
-        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
-      },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],
@@ -299,7 +252,6 @@ module.exports = {
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     extractCSS,
-    extractSASS,
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.

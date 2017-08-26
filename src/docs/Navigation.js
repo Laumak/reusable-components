@@ -1,9 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
+
+const SideMenu = styled.aside`
+  float: left;
+  width: 250px;
+  padding-top: 20px;
+`
 
 const Navigation = ({components}) => {
   return (
-    <aside className="menu">
+    <SideMenu>
       <p className="menu-label">
         Components
       </p>
@@ -17,7 +24,7 @@ const Navigation = ({components}) => {
           )
         }
       </ul>
-    </aside>
+    </SideMenu>
   )
 }
 

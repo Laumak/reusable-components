@@ -1,14 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 
 import Props from "./Props"
 import Example from "./Example"
+
+const StyledPage = styled.div`
+  min-height: 100vh;
+  margin-left: 250px;
+  padding: 20px;
+  border-left: 1px solid #dbdbdb;
+`
 
 const ComponentPage = ({ component }) => {
   const { name, description, props, examples } = component
 
   return (
-    <div className="componentpage content">
+    <StyledPage>
       <h2>{name}</h2>
       <p>{description}</p>
 
@@ -27,7 +35,7 @@ const ComponentPage = ({ component }) => {
           ? <Props props={props} />
           : "This component accepts no props."
       }
-    </div>
+    </StyledPage>
   )
 }
 

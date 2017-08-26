@@ -1,8 +1,15 @@
 import React from "react"
+import { injectGlobal } from "styled-components"
 
 import Navigation from "./Navigation"
 import ComponentPage from "./ComponentPage"
 import componentData from "../../config/componentData"
+
+injectGlobal`
+  body {
+    font-family: 'Fira Sans', sans-serif;
+  }
+`
 
 class Docs extends React.Component {
   state = {
@@ -16,7 +23,7 @@ class Docs extends React.Component {
   }
 
   render() {
-    const { route}  = this.state
+    const { route } = this.state
     const component = route
       ? componentData.filter(component => component.name === route)[0]
       : componentData[0]
